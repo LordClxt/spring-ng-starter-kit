@@ -2,7 +2,9 @@
 README.md
 api.base.service.ts
 api.module.ts
+api/adminController.service.ts
 api/api.ts
+api/homeController.service.ts
 configuration.ts
 encoder.ts
 git_push.sh

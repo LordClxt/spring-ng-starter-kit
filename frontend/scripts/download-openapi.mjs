@@ -1,9 +1,10 @@
 import fetch from 'node-fetch'
 import fs from 'fs/promises'
-
+import {configDotenv} from 'dotenv'
+configDotenv()
 async function downloadOpenApiSpec() {
   try {
-    const response = await fetch('http://localhost:8080/v3/api-docs.yaml')
+    const response = await fetch(`${process.env.BACKEND_URL}/v3/api-docs.yaml`)
     const data = await response.text()
     await fs.writeFile('openapi-specs/openapi.yaml', data)
     console.log('Spécification OpenAPI téléchargée avec succès.')

@@ -1,5 +1,7 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal, resource, inject } from '@angular/core';
+
+const PAGE_SIZE = 20;
+
 @Component({
   selector: 'app-root',
   imports: [],
@@ -9,7 +11,5 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   protected readonly title = signal('frontend');
 
-  onButtonClick() {
-    
-  }
+  onButtonClick() {}
 }

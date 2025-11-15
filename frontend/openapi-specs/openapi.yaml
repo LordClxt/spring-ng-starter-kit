@@ -3,7 +3,33 @@ info:
   title: OpenAPI definition
   version: v0
 servers:
-- url: http://localhost:8080
+- url: http://localhost:8081
   description: Generated server url
-paths: {}
+paths:
+  /home:
+    get:
+      tags:
+      - home-controller
+      operationId: home
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /admins:
+    get:
+      tags:
+      - admin-controller
+      operationId: getAllAdmins
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
 components: {}
