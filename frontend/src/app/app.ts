@@ -10,6 +10,6 @@ const PAGE_SIZE = 20;
 })
 export class App {
   protected readonly title = signal('frontend');
-
+  
   onButtonClick() {}
 }
