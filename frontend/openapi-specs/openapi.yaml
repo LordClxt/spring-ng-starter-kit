@@ -6,6 +6,24 @@ servers:
 - url: http://localhost:8081
   description: Generated server url
 paths:
+  /auth:
+    post:
+      tags:
+      - auth-controller
+      operationId: register
+      parameters:
+      - name: loginDto
+        in: query
+        required: true
+        schema:
+          $ref: "#/components/schemas/LoginDto"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
   /home:
     get:
       tags:
@@ -32,4 +50,38 @@ paths:
                 type: array
                 items:
                   type: string
-components: {}
+components:
+  schemas:
+    AttributesDto:
+      type: object
+      properties:
+        attribute_key:
+          type: string
+    CredentialsDto:
+      type: object
+      properties:
+        temporary:
+          type: boolean
+        type:
+          type: string
+        value:
+          type: string
+    LoginDto:
+      type: object
+      properties:
+        username:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+        emailVerified:
+          type: boolean
+        enabled:
+          type: boolean
+        credentials:
+          $ref: "#/components/schemas/CredentialsDto"
+        attributes:
+          $ref: "#/components/schemas/AttributesDto"

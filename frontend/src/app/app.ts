@@ -1,10 +1,11 @@
 import { Component, signal, resource, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 const PAGE_SIZE = 20;
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

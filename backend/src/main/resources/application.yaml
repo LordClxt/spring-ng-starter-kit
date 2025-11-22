@@ -6,16 +6,7 @@ spring:
     username: ${DATABASE_USERNAME:postgres}
     password: ${DATABASE_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: ${OAUTH2_ISSUER_URI:http://localhost:8080/realms/SpringSercurityKeycloackRealm}
-          jwk-set-uri: ${OAUTH2_JWK_SET_URI:http://localhost:8080/realms/SpringSercurityKeycloackRealm/protocol/openid-connect/certs}
-server:
-  port: ${SERVER_PORT:8081}
-jwt:
-  auth:
-    converter:
-    resource-id: ${KEY_RESSOURCE_ID:my-app-client}
-    principal-attribute: ${KEY_PRINCIPAL_ATTRIBUTE:principal_username}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
